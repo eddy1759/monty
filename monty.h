@@ -20,9 +20,9 @@
 */
 typedef struct stack_s
 {
-    int n;
-    struct stack_s *prev;
-    struct stack_s *next;
+int n;
+struct stack_s *prev;
+struct stack_s *next;
 } stack_t;
 
 /**
@@ -35,8 +35,8 @@ typedef struct stack_s
 */
 typedef struct instruction_s
 {
-    char *opcode;
-    void (*f)(stack_t **stack, unsigned int line_number);
+char *opcode;
+void (*f)(stack_t **stack, unsigned int line_number);
 
 } instruction_t;
 
@@ -52,10 +52,10 @@ typedef struct instruction_s
 
 typedef struct bus_s
 {
-    char *agr;
-    FILE *file;
-    char *content;
-    int lifi;
+char *arg;
+FILE *file;
+char *content;
+int lifi;
 } bus_t;
 extern bus_t bus;
 
@@ -83,6 +83,5 @@ void addnode(stack_t **head, int n);
 void addqueue(stack_t **head, int n);
 void f_queue(stack_t **head, unsigned int counter);
 void f_stack(stack_t **head, unsigned int counter);
-
 
 #endif
